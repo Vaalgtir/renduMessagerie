@@ -1,0 +1,71 @@
+.view {
+  display: grid;
+  grid-template-columns: 2fr 5fr 2fr;
+
+  .messages {
+  }
+  .friends {
+    box-shadow: -2px 0px 5px rgba(9, 30, 66, 0.13);
+
+    .header {
+      padding-left: 1vw;
+      box-shadow: 0px 4px 5px rgba(9, 30, 66, 0.13);
+    }
+
+    .userList {
+      max-height: 78vh;
+
+      overflow: auto;
+
+      .subTitle {
+        padding: 1vh 2vw;
+        padding-top: 3vh;
+        position: fixed;
+        width: 100%;
+
+        z-index: 3;
+
+        background-color: white;
+
+        & + div {
+          margin-top: 7vh;
+        }
+      }
+
+      .usersSection {
+        max-height: 25vh;
+        overflow-y: auto;
+      }
+
+      .friend {
+        display: flex;
+
+        align-items: center;
+        justify-content: space-between;
+
+        padding-left: 1vw;
+
+        .name {
+          display: flex;
+          align-items: center;
+        }
+
+        .badge {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          letter-spacing: 0.5px;
+          font-weight: bold;
+          background: rgb(189, 189, 189);
+          > span {
+            background-color: transparent !important;
+            color: white !important;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,190 @@
+@keyframes blurIn {
+  0% {
+    backdrop-filter: blur(0px);
+  }
+  100% {
+    backdrop-filter: blur(10px);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    background-color: transparent;
+    color: transparent;
+
+    box-shadow: 0 0 15px transparent;
+
+    border-radius: 0.8rem;
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0.13);
+    color: white;
+
+    box-shadow: 0 0 15px rgb(31, 31, 31, 0.1);
+
+    border-radius: 0.8rem;
+  }
+}
+
+@keyframes buttonFadeIn {
+  0% {
+    background-color: transparent;
+    color: transparent;
+    border: 2px solid transparent;
+  }
+  100% {
+    background-color: white;
+    color: rgb(63, 79, 133);
+    border: 2px solid white;
+  }
+}
+
+@keyframes inputFadeIn {
+  0% {
+    border: 1px solid transparent;
+    background-color: transparent;
+    color: transparent;
+  }
+  100% {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+}
+
+.view {
+  .Background {
+    z-index: 2;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    backdrop-filter: blur(10px);
+
+    // animation: blurIn 500ms ease-in-out 1;
+    transition: all 500ms ease-in-out;
+
+    &[data-displaying="true"] {
+      backdrop-filter: blur(0px);
+    }
+  }
+
+  .modal {
+    z-index: 3;
+
+    position: absolute;
+    top: 21vh;
+    left: 35vw;
+
+    height: 41vh;
+    width: 30vw;
+
+    background-color: rgba(255, 255, 255, 0.13);
+    color: rgb(40, 57, 112);
+
+    box-shadow: 0 0 15px rgb(31, 31, 31, 0.1);
+
+    border-radius: 0.8rem;
+
+    animation: fadeIn 500ms ease-in-out 1;
+    transition: all 500ms ease-in-out;
+
+    padding-top: 2vh;
+
+    & h1 {
+      text-align: center;
+      font-weight: 300;
+      font-size: 1.4rem;
+      padding-bottom: 0.5rem;
+    }
+
+    & h2 {
+      font-weight: 200;
+      font-size: 1.2rem;
+      color: rgb(255, 142, 142);
+    }
+
+    &[data-displaying="true"] {
+      background-color: transparent;
+      color: transparent;
+
+      box-shadow: 0 0 15px transparent;
+
+      border-radius: 0.8rem;
+
+      & form {
+        & input {
+          border: 1px solid transparent;
+          background-color: transparent;
+          color: transparent;
+        }
+      }
+    }
+
+    & form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      margin-top: 8vh;
+
+      &[data-warning="true"] {
+        margin-top: 3.5vh;
+      }
+
+      & input {
+        display: block;
+        appearance: none;
+        outline: 0;
+        border: 1px solid rgb(158, 177, 240);
+        background-color: rgba(255, 255, 255, 0.2);
+        // width: 14vw;
+
+        border-radius: 3px;
+        padding: 1vh 1vw;
+        margin: 0 auto 1.2vh auto;
+        display: block;
+        text-align: center;
+        font-size: 1.2rem;
+
+        color: rgb(158, 177, 240);
+        font-weight: 300;
+
+        transition: all 500ms ease-in-out;
+        animation: inputFadeIn 500ms ease-in-out 1;
+
+        &::placeholder {
+          color: rgba(141, 160, 221, 0.9);
+        }
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.4);
+        }
+
+        &:focus {
+          background-color: white;
+          width: 16vw;
+
+          color: rgb(59, 84, 164);
+        }
+      }
+
+      button {
+        margin-top: 1vh;
+      }
+    }
+  }
+
+  &[data-is-mobile="true"] {
+    .modal {
+      left: 6vw;
+      width: 89vw;
+
+      height: 47vh;
+    }
+  }
+}

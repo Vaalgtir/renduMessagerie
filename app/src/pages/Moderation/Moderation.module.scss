@@ -1,0 +1,40 @@
+.view {
+  display: flex;
+
+  justify-content: center;
+
+  padding-top: 4vh;
+
+  margin: 0 2vw;
+
+  max-height: 80vh;
+  overflow: scroll;
+
+  table {
+    tr {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 5vw;
+      padding: 1vh 0;
+      align-items: center;
+
+      border-bottom: 1px solid #e2e2e2;
+
+      background-color: transparent;
+
+      transition: all 250ms ease-in-out;
+
+      cursor: pointer;
+
+      td {
+        max-height: 8vh;
+        overflow-y: scroll;
+      }
+
+      &:hover {
+        background-color: #e2e2e2;
+      }
+    }
+  }
+}

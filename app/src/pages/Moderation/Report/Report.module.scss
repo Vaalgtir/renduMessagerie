@@ -1,0 +1,116 @@
+.tr {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 5vw;
+  padding: 1vh 0;
+  align-items: center;
+
+  border-bottom: 1px solid #e2e2e2;
+
+  background-color: transparent;
+
+  transition: all 250ms ease-in-out;
+
+  cursor: pointer;
+
+  td {
+    max-height: 8vh;
+    overflow-y: scroll;
+  }
+
+  &:hover {
+    background-color: #e2e2e2;
+  }
+}
+
+.analytics {
+  display: flex;
+
+  justify-content: space-around;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 9vw;
+    min-height: 16vh;
+
+    color: white;
+
+    padding: 1vh 1vw;
+
+    border-radius: 1rem;
+
+    box-shadow: -2px 3px 10px rgb(188 188 188);
+    margin-bottom: 2vh;
+
+    span {
+      font-size: 3rem;
+    }
+  }
+
+  .sum {
+    background: rgb(255, 155, 155);
+    background: linear-gradient(
+      45deg,
+      rgba(255, 155, 155, 1) 0%,
+      rgba(255, 61, 61, 1) 100%
+    );
+  }
+  .average {
+    background: rgb(142, 176, 255);
+    background: linear-gradient(
+      45deg,
+      rgba(142, 176, 255, 1) 0%,
+      rgba(78, 61, 255, 1) 100%
+    );
+  }
+  .sumUsers {
+    background: rgb(255, 226, 142);
+    background: linear-gradient(
+      45deg,
+      rgba(255, 226, 142, 1) 0%,
+      rgba(255, 189, 61, 1) 100%
+    );
+  }
+}
+
+.messagesContainer {
+  h2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  table {
+    margin: 0 2vw;
+
+    max-width: 40vw;
+
+    tr {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 3vw;
+      padding: 1vh 0;
+
+      align-items: center;
+
+      border-bottom: 1px solid #e2e2e2;
+
+      background-color: transparent;
+
+      transition: all 250ms ease-in-out;
+
+      td {
+        max-height: 8vh;
+        overflow-y: scroll;
+      }
+
+      &:hover {
+        background-color: #e2e2e2;
+      }
+    }
+  }
+}

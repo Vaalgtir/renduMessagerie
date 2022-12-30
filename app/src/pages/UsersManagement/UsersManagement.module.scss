@@ -1,0 +1,41 @@
+.table {
+  width: 94vw;
+
+  margin: 2vh 3vw;
+
+  & > div {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+
+    text-align: center;
+
+    &:first-child {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+  }
+
+  .wrapperUsers {
+    max-height: 80vh;
+
+    grid-column: 1/7;
+
+    & > div {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      border-bottom: 1px solid #e2e2e2;
+
+      & > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    overflow-y: scroll;
+  }
+
+  .textView {
+    padding: 8px 5px;
+  }
+}

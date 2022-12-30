@@ -1,0 +1,31 @@
+.message {
+  padding: 0.75vh 1vw;
+  margin: 0.2vh 1vw;
+
+  border-radius: 2.25rem;
+}
+
+.wrapperMessage {
+  &[data-mine="true"] {
+    display: flex;
+    justify-content: flex-end;
+
+    .message {
+      background-color: #0062f4;
+      color: white;
+    }
+  }
+  &[data-mine="false"] {
+    display: flex;
+    justify-content: flex-start;
+
+    .message {
+      background-color: #d5d5d5;
+      color: black;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 7vh;
+  }
+}
