@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: bdd
+  labels:
+    app: bdd
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 5432
+      targetPort: 5432
+      protocol: TCP
+      name: http
+  selector:
+    app: bdd
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bdd-deployment
+  labels:
+    app: bdd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bdd
+  template:
+    metadata:
+      labels:
+        app: bdd
+    spec:
+      containers:
+        - name: bdd
+          image: vaalgtir/bdd-messagerie
+          ports:
+            - containerPort: 5432
