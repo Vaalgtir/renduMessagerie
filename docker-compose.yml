@@ -1,0 +1,81 @@
+version: '3.7'
+
+services:
+
+  app:
+    container_name: app
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    volumes:
+      - './app:/app'
+      - '/app/node_modules'
+    ports:
+      - 3001:3000
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    networks:
+        - vplanner_front
+ 
+  bdd:
+    container_name: bdd
+    restart: always
+    build:
+      context: ./bdd
+      dockerfile: Dockerfile
+    ports:
+        - "5432:5432"
+    environment:
+      - POSTGRES_USER=test
+      - POSTGRES_PASSWORD=khunou
+    volumes:
+      - my-datavolume:/var/lib/postgresql/data:rw
+    networks:
+        - vplanner_back
+
+  api:
+    depends_on:
+      - bdd
+    container_name: api
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+        - "5000:3000"
+    volumes:
+        - ./api:/api
+        - /api/node_modules
+    networks:
+        - vplanner_front
+        - vplanner_back
+
+  # studio:
+  #   depends_on:
+  #     - bdd
+  #   container_name: studio
+  #   build:
+  #     context: ./api
+  #     dockerfile: Dockerfile.studio
+  #   ports:
+  #       - "5555:5555"
+  #   networks:
+  #       - vplanner_back
+
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
+    depends_on:
+      - bdd
+    networks:
+      - vplanner_back
+
+
+volumes:
+  my-datavolume:
+
+networks:
+  vplanner_front:
+    driver: bridge
+  vplanner_back:
+    driver: bridge
