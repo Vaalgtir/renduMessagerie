@@ -1,6 +1,6 @@
 # node-Messagerie
 
-<LIEN VERS LA PAGE WEB>
+http://57.128.91.231:3000/
 
 ## Installation et Seeding de la DB
 
@@ -14,9 +14,15 @@ Vous ne pourrez pas installer le projet car il possède des .env sensible, notam
 
 Vous avez à votre disposition un site internet renseigné en haut de cet notice.
 
-2 utilisateurs sont déjà fournis : salesman@gmail.com et customer@gmail.com, les mots de passes étant déjà renseignés dans le champs password pour le bien de la démo.
+2 utilisateurs sont déjà fournis : salesman@gmail.com et customer@gmail.com, leur mot de passe étant pour les 2 : "khunou"
+salesman@gmail.com est un administrateur et un vendeur, il peut donc accepter les demandes de discussions via sa page d'accueil.
+customer@gmail.com est un utilisateur lambda dont le mail a été validé
 
 ## Liste des fonctionnalités
+
+### Hébergement
+
+Afin de se rapproché le plus possible d'une logique d'entreprise, le projet est hébergé sur le Cloud d'OVH via un cluster Kubernetes scalable en fonction de la charge. Les fichiers de configs se trouvent dans le répertoir /kubernetes.
 
 ### Sécurité
 
