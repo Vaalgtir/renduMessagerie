@@ -14,9 +14,9 @@ Vous ne pourrez pas installer le projet car il possède des .env sensible, notam
 
 Vous avez à votre disposition un site internet renseigné en haut de cet notice.
 
-2 utilisateurs sont déjà fournis : salesman@gmail.com et customer@gmail.com, leur mot de passe étant pour les 2 : "khunou"
-salesman@gmail.com est un administrateur et un vendeur, il peut donc accepter les demandes de discussions via sa page d'accueil.
-customer@gmail.com est un utilisateur lambda dont le mail a été validé
+2 utilisateurs sont déjà fournis : salesman@gmail.com et customer@gmail.com, leur mot de passe étant pour les 2 : "khunou".
+ - salesman@gmail.com est un administrateur et un vendeur, il peut donc accepter les demandes de discussions via sa page d'accueil.
+ - customer@gmail.com est un utilisateur lambda dont le mail a été validé
 
 ## Liste des fonctionnalités
 
